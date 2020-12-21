@@ -1,5 +1,5 @@
 #!/bin/ksh
-PATH=/home/pi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 IPADDR=$(hostname -I)
 HOSTNAME=$(hostname -s)
@@ -9,4 +9,4 @@ while [ "$IPADDR" = "" ];do
   IPADDR=$(hostname -I)
 done
 
-/home/pi/bin/ipAddr
+$HOME/bin/ipAddr

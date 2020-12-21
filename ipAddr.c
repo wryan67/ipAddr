@@ -16,7 +16,7 @@
 
 int fd=0;
 int lcdHandle=0;
-int lcdAddress=0x27;
+int lcdAddress=0x23;
 
 
 char *chomp(char *s) {
@@ -61,6 +61,13 @@ int main()
 
     printf("Hostname: %s\n", hostName);
     printf("Host IP: %s\n", ipAddress);
+
+    for (int i=0;i<strlen(ipAddress);++i) {
+        if (ipAddress[i]==' ') {
+            ipAddress[i]=0;
+            break;
+        }
+    }
 
     lcdPosition(lcdHandle,0,0);
     lcdPrintf(lcdHandle, "%-16.16s", hostName);
