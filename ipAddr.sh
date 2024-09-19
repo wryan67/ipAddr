@@ -1,12 +1,14 @@
 #!/bin/ksh
-PATH=/home/pi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+PATH=$HOME/bin:$PATH
 
 IPADDR=$(hostname -I)
-HOSTNAME=$(hostname -s)
+IPV6=$(echo $IPADDR | awk '{print substr($1,5,1)}')
 
-while [ "$IPADDR" = "" -o "$HOSTNAME" = "raspberrypi" ];do
+
+while [ "$IPADDR" = "" -o "$IPV6" = ":" ];do
   sleep 1
   IPADDR=$(hostname -I)
+  IPV6=$(echo $IPADDR | awk '{print substr($1,5,1)}')
 done
 
-/home/pi/bin/ipAddr
+$HOME/bin/ipAddr $*
