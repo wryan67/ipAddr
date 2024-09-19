@@ -48,6 +48,6 @@ Edit your crontab using:
 
     $ crontab -e
 
-Then add the following line:
+Then add the following line, but replayce the ${HOME} variables with the physical path to your home folder:
 
     @reboot ${HOME}/bin/ipAddr.sh -a 0x27 > ${HOME}/logs/ipAddr.log 2>&1
