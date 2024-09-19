@@ -16,7 +16,7 @@ Use your favorite github cloning tool or this command line:
 
 ### Compling
 
-Navigate to the cloned repository then run make
+Navigate to the cloned repository then run make:
 
     $ cd ipAddr
     $ make 
